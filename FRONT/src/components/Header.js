@@ -1,17 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { logo, searchimg } from "../img";
+import "../css/header.css";
 
 const Header = () => {
   return (
     <div>
       <div className="header">
-        <div className="relative w-1050px h-100px my-0 mx-auto tracking-tighter">
-          <div className="absolute h-37px right-0 flex items-center">
+        <div className="container">
+          <div className="top">
             <Link to="/join">회원가입</Link>
             <Link to="/login">로그인</Link>
             <div className="top-bar"></div>
-            <Link to="/mypage">마이페이지</Link>
+            {/* <Link to="/mypage">마이페이지</Link> */}
             <Link to="/auth">관리자 페이지</Link>
             <div className="top-bar"></div>
             <div className="cs">
