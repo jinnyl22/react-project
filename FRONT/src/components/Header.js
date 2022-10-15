@@ -10,6 +10,7 @@ const Header = () => {
         <div className="container">
           <div className="top">
             <Link to="/join">회원가입</Link>
+            <div className="top-bar"></div>
             <Link to="/login">로그인</Link>
             <div className="top-bar"></div>
             {/* <Link to="/mypage">마이페이지</Link> */}
@@ -31,19 +32,11 @@ const Header = () => {
               <Link to="/">
                 <img src={logo} alt="대체 로고" />
               </Link>
-              <button>FRANK</button>
             </div>
             <div className="gnb-bar">
               <div className="search-bar">
                 <input type="text" placeholder="검색어를 입력해주세요" />
                 <img src={searchimg} alt="돋보기" />
-              </div>
-            </div>
-            <div className="icon-box">
-              <div className="icon">
-                <div className="locationB"></div>
-                <div className="heartB"></div>
-                <div className="cartB"></div>
               </div>
             </div>
           </div>
@@ -52,7 +45,9 @@ const Header = () => {
           <div className="bottom">
             <div className="lnb">
               <ul>
-                <li>PRODUCTS</li>
+                <li>
+                  <Link to="/shop">SHOP</Link>
+                </li>
                 <li>BEST</li>
               </ul>
             </div>

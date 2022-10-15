@@ -1,4 +1,4 @@
-import logo from "./Be Pretty.jpeg";
+import logo from "./SVG/logo.svg";
 import searchimg from "./searchimg.svg";
 
 export { logo, searchimg };

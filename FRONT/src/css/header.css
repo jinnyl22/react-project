@@ -25,7 +25,7 @@
 }
 
 .top > a:first-child {
-  color: rgb(95, 0, 128);
+  color: #ea5b50;
   z-index: 10;
 }
 
@@ -71,7 +71,7 @@
   padding-top: 36px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .logo {
@@ -81,23 +81,17 @@
 }
 
 .logo img {
-  width: 100px;
-  height: 80px;
+  width: 230px;
 }
 
-.logo button {
-  background-color: transparent;
-  color: rgb(95, 0, 128);
-  border: transparent;
-  margin-left: 20px;
-  font-size: 20px;
-  font-weight: 500;
+.gnb-bar {
+  margin-left: 70px;
 }
 
 .search-bar {
   width: 400px;
   height: 48px;
-  border: 1px solid rgb(95, 0, 128);
+  border: 1px solid #ea5b50;
   border-radius: 6px;
   background-color: rgb(255, 255, 255);
   display: flex;
@@ -151,7 +145,7 @@
 .lnb li {
   list-style: none;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .lnb li:nth-child(n + 2) {
