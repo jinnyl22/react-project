@@ -1,34 +1,77 @@
 const Sequelize = require("sequelize");
 const moment = require("moment");
 
-// 보통 테이블은 소문자 복수형(users), 모델은 대문자로 시작하는 단수형(User)로 작성한다.
-// 모델은 Sequelize.Model을 확장한 클래스로 선언한다.
 class Product extends Sequelize.Model {
   static init(sequelize) {
-    return super.init({
-      userName: {
-        type: Sequelize.STRING(20),
-        allowNull: false,
+    return super.init(
+      {
+        productName: {
+          type: Sequelize.STRING(15),
+          allowNull: false,
+          unique: true,
+        },
+        productPrice: {
+          type: Sequelize.INTEGER,
+          allowNull: false,
+        },
+        productSale: {
+          type: Sequelize.INTEGER,
+          allowNull: true,
+          defaultValue: 0,
+        },
+        productQuentity: {
+          type: Sequelize.INTEGER,
+          allowNull: true,
+          defaultValue: 0,
+        },
+        productComment: {
+          type: Sequelize.STRING,
+          allowNull: false,
+          defaultValue: "",
+        },
+        productImg: {
+          type: Sequelize.STRING,
+          allowNull: false,
+        },
+        productStatus: {
+          type: Sequelize.BOOLEAN,
+          allowNull: false,
+          defaultValue: 0,
+        },
+        createdAt: {
+          type: Sequelize.DATE,
+          allowNull: false,
+          get() {
+            return moment(this.getDataValue("createdAt")).format("YYYY/MM/DD HH:mm:ss");
+          },
+        },
+        updatedAt: {
+          type: Sequelize.DATE,
+          allowNull: false,
+          get() {
+            return moment(this.getDataValue("updatedAt")).format("YYYY/MM/DD HH:mm:ss");
+          },
+        },
+        deletedAt: {
+          type: Sequelize.DATE,
+          get() {
+            return moment(this.getDataValue("deletedAt")).format("YYYY/MM/DD HH:mm:ss");
+          },
+        },
       },
-      userId: {
-        type: Sequelize.STRING(40),
-        allowNull: false,
-        unique: true,
-      },
-      userPw: {
-        type: Sequelize.STRING(50),
-        allowNull: false,
-      },
-      userEmail: {
-        type: Sequelize.STRING(80),
-        allowNull: false,
-        unique: true,
-      },
-      userBirth: {
-        type: Sequelize.STRING(12),
-        allowNull: true,
-        defaultValue: "",
-      },
-    });
+      {
+        sequelize,
+        underscored: true,
+        timestamps: true,
+        paranoid: true,
+        modelName: "Product",
+        tableName: "products",
+        charset: "utf8",
+        collate: "utf8_general_ci",
+      }
+    );
   }
+  static associate(db) {}
 }
+
+module.exports = Product;
