@@ -43,6 +43,21 @@
   z-index: 10;
 }
 
+.triangle {
+  width: 8px;
+  height: 5px;
+  background-image: url(../img/ico_down_16x10.png);
+  background-size: cover;
+  background-position: center center;
+  /* 
+    display: inline-block은
+    기본적으로 inline 엘리먼트처럼 전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치되지만,
+    block 엘리먼트처럼 width와 height 속성 지정 및 margin과 padding 속성의 상하 간격 지정이 가능 */
+  display: inline-block;
+  margin-left: 5px;
+  margin-bottom: 1px;
+}
+
 .dropdown-list {
   display: none;
   position: absolute;
@@ -145,7 +160,7 @@
 
 .lnb li {
   list-style: none;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
 }
 

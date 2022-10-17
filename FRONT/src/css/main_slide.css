@@ -41,5 +41,12 @@ body {
 
 .swiper-button-prev,
 .swiper-button-next {
-  color: rgb(217, 217, 217);
+  color: rgb(80, 78, 78);
+}
+
+/* .swiper-pagination-bullet-active :root {
+  background-color: #ea5b50;
+} */
+:root {
+  --swiper-theme-color: #ea5b50;
 }

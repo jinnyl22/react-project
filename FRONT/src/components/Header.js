@@ -16,9 +16,11 @@ const Header = () => {
             {/* <Link to="/mypage">마이페이지</Link> */}
             <Link to="/auth">관리자 페이지</Link>
             <div className="top-bar"></div>
+            <Link to="/auth">고객센터</Link>
+            <div className="top-bar"></div>
             <div className="cs">
               <Link to="/board">
-                고객센터
+                장바구니
                 <span className="triangle"></span>
               </Link>
               <div className="dropdown-list">
@@ -46,9 +48,11 @@ const Header = () => {
             <div className="lnb">
               <ul>
                 <li>
-                  <Link to="/shop">SHOP</Link>
+                  <Link to="/shop">전체상품</Link>
                 </li>
-                <li>BEST</li>
+                <li>베스트</li>
+                <li>신상품</li>
+                <li>할인특가</li>
               </ul>
             </div>
           </div>
