@@ -46,8 +46,15 @@ const Main = () => {
                 <Link>
                   <div className="thumbnail"></div>
                   <div className="desc">
-                    <p className="name">오늘 단 하루 특가</p>
-                    <div className="price"></div>
+                    <p className="name">
+                      오늘 단 하루 특가
+                      <br />
+                      후랑크 키링
+                    </p>
+                    <div className="price">
+                      <span className="discount color-red"></span>
+                      <span className="sum"></span>
+                    </div>
                   </div>
                 </Link>
               </li>
