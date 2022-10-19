@@ -6,5 +6,8 @@ import slide3 from "./slide/mainRolling3.jpg";
 import slide4 from "./slide/mainRolling4.jpg";
 import slide5 from "./slide/mainRolling5.jpg";
 import slide6 from "./slide/mainRolling6.jpg";
+import grip from "./grip.jpg";
+import keyring from "./keyring.jpg";
+import sticker from "./sticker.jpg";
 
-export { logo, searchimg, slide1, slide2, slide3, slide4, slide5, slide6 };
+export { logo, searchimg, slide1, slide2, slide3, slide4, slide5, slide6, grip, keyring, sticker };

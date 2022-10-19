@@ -16,7 +16,7 @@ const Header = () => {
             {/* <Link to="/mypage">마이페이지</Link> */}
             <Link to="/auth">관리자 페이지</Link>
             <div className="top-bar"></div>
-            <Link to="/auth">고객센터</Link>
+            <Link to="/board">고객센터</Link>
             <div className="top-bar"></div>
             <div className="cs">
               <Link to="/board">
