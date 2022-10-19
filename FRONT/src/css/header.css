@@ -161,7 +161,7 @@
 .lnb li {
   list-style: none;
   font-size: 15px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .lnb li:nth-child(n + 2) {
