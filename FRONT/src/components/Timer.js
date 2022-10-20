@@ -7,12 +7,12 @@ const Timer = () => {
   //   console.log(now);
   let end = new Date("2022-10-21 00:00:00");
   let nowTime = now.getTime();
-  console.log(nowTime);
+  // console.log(nowTime);
   let endTime = end.getTime();
-  console.log(endTime);
+  // console.log(endTime);
 
   let gapTime = endTime - nowTime;
-  console.log(gapTime);
+  // console.log(gapTime);
 
   let sec = Math.floor((gapTime / 1000) % 60);
   console.log(sec);
