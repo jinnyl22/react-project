@@ -1,0 +1,18 @@
+.side-box {
+  width: 100px;
+  padding: 15px 0px 0px 0px;
+}
+
+.notice-box {
+  padding-bottom: 15px;
+}
+
+.notice-box span:hover {
+  color: #ea5b50;
+  cursor: pointer;
+}
+
+.board-box span:hover {
+  color: #ea5b50;
+  cursor: pointer;
+}

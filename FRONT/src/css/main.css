@@ -35,6 +35,11 @@
   font-size: 14px;
   line-height: 15px;
   font-weight: 600;
+  display: flex;
+}
+
+.time span {
+  padding-right: 15px;
 }
 
 .items {

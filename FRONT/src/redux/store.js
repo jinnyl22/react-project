@@ -1,6 +1,9 @@
-import { combineReducers, configureStore, createSilce } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import listFormSlice from "../redux/listFormSlice";
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  listForm: listFormSlice.reducer,
+});
 
 const store = configureStore({
   reducer: rootReducer,

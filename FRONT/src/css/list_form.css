@@ -1,0 +1,45 @@
+.board-thead {
+  width: 100%;
+  table-layout: fixed;
+  border-bottom: 1px solid rgb(51, 51, 51);
+  border-top: 2px solid rgb(51, 51, 51);
+}
+
+th {
+  padding: 20px 0px;
+  text-align: center;
+  line-height: 20px;
+  font-weight: 400;
+  color: rgb(51, 51, 51);
+  font-size: 12px;
+}
+
+.board-tbody {
+  border-bottom: 1px solid rgb(244, 244, 244);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.board-num {
+  padding: 20px 0px;
+  text-align: center;
+  color: rgb(76, 76, 76);
+}
+
+.board-title {
+  padding: 20px 0px 20px 10px;
+  color: rgb(76, 76, 76);
+  text-align: left;
+}
+
+.board-name {
+  padding: 20px 0px;
+  text-align: center;
+  color: rgb(76, 76, 76);
+}
+
+.board-date {
+  padding: 20px 0px;
+  text-align: center;
+  color: rgb(153, 153, 153);
+}

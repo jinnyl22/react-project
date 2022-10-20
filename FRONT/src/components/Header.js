@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { logo, searchimg } from "../img";
+import { logo, searchimg, header_hand, header_body } from "../img";
 import "../css/header.css";
 
 const Header = () => {
@@ -8,6 +8,7 @@ const Header = () => {
     <div>
       <div className="header">
         <div className="container">
+          <img src={header_hand} alt="후랑크 손" className="frank-hand" />
           <div className="top">
             <Link to="/join">회원가입</Link>
             <div className="top-bar"></div>
@@ -41,6 +42,11 @@ const Header = () => {
                 <img src={searchimg} alt="돋보기" />
               </div>
             </div>
+            {/* <div className="header-frank"> */}
+            <div className="frank">
+              <img src={header_body} alt="후랑크 몸" className="frank-body" />
+            </div>
+            {/* </div> */}
           </div>
         </div>
         <div className="header-bottom">
