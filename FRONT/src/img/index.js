@@ -9,5 +9,7 @@ import slide6 from "./slide/mainRolling6.jpg";
 import grip from "./grip.jpg";
 import keyring from "./keyring.jpg";
 import sticker from "./sticker.jpg";
+import header_hand from "./SVG/header_hand.svg";
+import header_body from "./SVG/header_body.svg";
 
-export { logo, searchimg, slide1, slide2, slide3, slide4, slide5, slide6, grip, keyring, sticker };
+export { logo, searchimg, slide1, slide2, slide3, slide4, slide5, slide6, grip, keyring, sticker, header_hand, header_body };

@@ -15,7 +15,7 @@ const Notice = () => {
               <span>frank의 소식과 이벤트를 만나보세요!</span>
             </div>
             <div className="write-btn">
-              <Link to="/board/write">
+              <Link to="/notice/write">
                 <button>글쓰기</button>
               </Link>
             </div>
