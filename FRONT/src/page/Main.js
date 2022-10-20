@@ -15,7 +15,7 @@ const Main = () => {
   return (
     <>
       <div>
-        <Swiper autoplay={{ delay: 1000 }} loop={true} pagination={true} navigation={true} modules={[Pagination, Navigation, Autoplay]} className="mySwiper">
+        <Swiper autoplay={{ delay: 4000 }} loop={true} pagination={true} navigation={true} modules={[Pagination, Navigation, Autoplay]} className="mySwiper">
           <SwiperSlide>
             <img src={slide1} alt="슬라이드1" />
           </SwiperSlide>
