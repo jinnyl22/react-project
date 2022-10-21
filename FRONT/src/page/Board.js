@@ -1,11 +1,10 @@
 import React from "react";
 import { BoardListForm } from "../components";
-import "../css/board.css";
 
 const Board = () => {
   return (
     <div>
-      <div className="board-page">
+      <div style={{ width: "1050px", padding: "50px 0px 80px", margin: "0px auto", display: "flex" }}>
         <BoardListForm />
       </div>
     </div>

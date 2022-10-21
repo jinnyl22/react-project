@@ -5,7 +5,7 @@ const Timer = () => {
 
   let now = new Date();
   //   console.log(now);
-  let end = new Date("2022-10-22 00:00:00");
+  let end = new Date("2022-10-29 00:00:00");
   let nowTime = now.getTime();
   // console.log(nowTime);
   let endTime = end.getTime();

@@ -6,7 +6,7 @@ import "../css/list_form.css";
 const BoardListForm = () => {
   const nav = useNavigate();
   const [list, setList] = useState([]);
-  const name = useRef("공지사항");
+  const boardList = useRef("공지사항");
   const postUrl = useRef("notice");
 
   const BoardListForm = useSelector((state) => state.boardListForm.list);
@@ -24,7 +24,7 @@ const BoardListForm = () => {
           <div className="notice-box">
             <div
               onClick={() => {
-                name.current = "공지사항";
+                boardList.current = "공지사항";
                 postUrl.current = "notice";
                 setList(NoticeListForm);
                 nav("/notice");
@@ -36,7 +36,7 @@ const BoardListForm = () => {
           <div className="board-box">
             <div
               onClick={() => {
-                name.current = "문의사항";
+                boardList.current = "문의사항";
                 postUrl.current = "board";
                 setList(BoardListForm);
                 nav("/board");
@@ -48,7 +48,7 @@ const BoardListForm = () => {
         </div>
         <div className="board-container">
           <div className="board-top">
-            <h3>{name.current}</h3>
+            <h3>{boardList.current}</h3>
             <span>배송, 상품, 기타</span>
           </div>
           <div className="write-btn">
