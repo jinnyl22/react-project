@@ -179,12 +179,13 @@
   height: 56px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   margin: auto;
 }
 
 .lnb ul {
   display: flex;
+  justify-content: space-between;
+  width: 1050px;
 }
 
 .lnb li {
@@ -193,6 +194,6 @@
   font-weight: 500;
 }
 
-.lnb li:nth-child(n + 2) {
+/* .lnb li:nth-child(n + 2) {
   margin-left: 200px;
-}
+} */

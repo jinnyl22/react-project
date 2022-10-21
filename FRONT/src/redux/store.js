@@ -1,8 +1,9 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import listFormSlice from "../redux/listFormSlice";
+import { NoticeListFormSlice, BoardListFormSlice } from "./boardFormSlice";
 
 const rootReducer = combineReducers({
-  listForm: listFormSlice.reducer,
+  noticeListForm: NoticeListFormSlice.reducer,
+  boardListForm: BoardListFormSlice.reducer,
 });
 
 const store = configureStore({

@@ -1,12 +1,15 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import List_form from "./ListForm";
+// import NoticeListForm from "./NoticeListForm";
+// import NoticeViewForm from "./NoticeViewForm";
+import AuthListForm from "./AuthListForm";
+import AuthSideList from "./AuthSideList";
 import Pagenation from "./Pagenation";
-import View_form from "./View_form";
-import WriteForm from "./WriteForm";
+// import ViewForm from "./NoticeViewForm";
 import Timer from "./Timer";
 import SlideTop from "./SlideTop";
-import ListForm from "./ListForm";
-import SideList from "./SideList";
+import BoardListForm from "./BoardListForm";
+// import BoardSideList from "./BoardSideList";
+import BoardViewForm from "./BoardViewForm";
 
-export { Header, Footer, List_form, Pagenation, View_form, WriteForm, Timer, SlideTop, ListForm, SideList };
+export { Header, Footer, Pagenation, Timer, SlideTop, AuthSideList, AuthListForm, BoardListForm, BoardViewForm };
