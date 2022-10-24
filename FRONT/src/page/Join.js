@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/join.css";
 import { useState } from "react";
-import { JoinFetch, checkFetch } from "../middleware/JoinFetch";
+import { JoinFetch, idCheckFetch, emailCheckFetch } from "../middleware/JoinFetch";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -14,6 +14,7 @@ const Join = () => {
     pwCheck: "",
     userPhone: "",
     userEmail: "",
+    userAuthNum: "",
   });
 
   const nameInputHandler = (e) => {
@@ -33,6 +34,9 @@ const Join = () => {
   };
   const emailInputHandler = (e) => {
     setJoinValues({ ...joinValues, userEmail: e.target.value });
+  };
+  const authNumInputHandler = (e) => {
+    setJoinValues({ ...joinValues, userAuthNum: e.target.value });
   };
 
   return (
@@ -54,7 +58,7 @@ const Join = () => {
             <div className="j-btn-wrap">
               <button
                 onClick={() => {
-                  dispatch(checkFetch({ userId: joinValues.userId }));
+                  dispatch(idCheckFetch({ id: joinValues.userId }));
                 }}
               >
                 중복확인
@@ -79,12 +83,23 @@ const Join = () => {
           <div className="middle-pw-check">
             <label>이메일</label>
             <input onChange={emailInputHandler} type="text" placeholder="이메일을 입력해주세요" />
-            <button onClick={() => {}}>인증하기</button>
+            <div className="j-btn-wrap">
+              <button
+                onClick={() => {
+                  console.log(joinValues.userEmail);
+                  dispatch(emailCheckFetch({ email: joinValues.userEmail }));
+                }}
+              >
+                인증하기
+              </button>
+            </div>
           </div>
           <div className="middle-pw-check">
             <label>인증번호</label>
-            <input onChange={phoneInputHandler} type="text" placeholder="인증번호를 입력해주세요" />
-            <button onClick={() => {}}>인증확인</button>
+            <input onChange={authNumInputHandler} type="text" placeholder="인증번호를 입력해주세요" />
+            <div className="j-btn-wrap">
+              <button onClick={() => {}}>인증확인</button>
+            </div>
           </div>
         </div>
         <div className="join-bt">

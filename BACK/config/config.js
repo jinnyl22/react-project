@@ -13,6 +13,10 @@ const config = {
     // 아래와 같이 나라지정을 해주어야 나라에 맞춰 시간이 들어온다
     timezone: "Asia/Seoul",
   },
+  mailer: {
+    email: process.env.EMAIL,
+    pw: process.env.EMAIL_PW,
+  },
 };
 
 module.exports = config;

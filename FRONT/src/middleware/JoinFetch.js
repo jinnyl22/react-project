@@ -37,10 +37,11 @@ const JoinFetch = createAsyncThunk("JoinSlice/JoinFetch", async (state) => {
 
 // 클라이언트 페이지에 import 해주어야한다
 
-const checkFetch = createAsyncThunk("joinSlice/checkFetch", async (id) => {
-  const checkResult = await axios({
+const idCheckFetch = createAsyncThunk("joinSlice/idCheckFetch", async (id) => {
+  console.log(id);
+  const idcheckResult = await axios({
     method: "post",
-    url: "http://localhost:80/idcheck",
+    url: "http://localhost:80/join/check/id",
     // 회원가입에서 입력한 값이 state에 담긴다
     data: id,
   })
@@ -53,7 +54,34 @@ const checkFetch = createAsyncThunk("joinSlice/checkFetch", async (id) => {
       console.log(error);
     });
 
-  return checkResult;
+  return idcheckResult;
 });
 
-export { JoinFetch, checkFetch };
+const emailCheckFetch = createAsyncThunk("joinSlice/emailCheckFetch", async (email) => {
+  console.log(email);
+  const emailCheckResult = await axios({
+    method: "post",
+    url: "http://localhost:80/join/emailsend",
+    data: email,
+  })
+    .then((e) => {
+      console.log(e);
+      return e.data;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  return emailCheckResult;
+});
+
+// const authNumCheckFetch = createAsyncThunk("joinSlice/authNumCheckFetch", async (authNum) => {
+//   const authNumCheckResult = await axios({
+//     method: "post",
+//     url: "http://localhost:80/join/check/authnum",
+//     data: authNum,
+//   }).then((e) => {
+//     console.log(e.data);
+//   });
+// });
+
+export { JoinFetch, idCheckFetch, emailCheckFetch };
