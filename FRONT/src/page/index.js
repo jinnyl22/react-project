@@ -6,5 +6,6 @@ import Mypage from "./Mypage";
 import Shop from "./Shop";
 import Board from "./Board";
 import BoardWrite from "./BoardWrite";
+import QnaView from "./QnaView";
 
-export { Authority, Main, Join, Login, Mypage, Shop, Board, BoardWrite };
+export { Authority, Main, Join, Login, Mypage, Shop, Board, BoardWrite, QnaView };

@@ -66,11 +66,13 @@ const emailCheckFetch = createAsyncThunk("joinSlice/emailCheckFetch", async (ema
   })
     .then((e) => {
       console.log(e);
+      alert(e.data.msg);
       return e.data;
     })
     .catch((error) => {
       console.log(error);
     });
+  // console.log(emailCheckResult);
   return emailCheckResult;
 });
 
@@ -82,6 +84,7 @@ const emailCheckFetch = createAsyncThunk("joinSlice/emailCheckFetch", async (ema
 //   }).then((e) => {
 //     console.log(e.data);
 //   });
+//   return authNumCheckResult;
 // });
 
 export { JoinFetch, idCheckFetch, emailCheckFetch };

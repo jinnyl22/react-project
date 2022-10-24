@@ -2,11 +2,18 @@ import { createSlice } from "@reduxjs/toolkit";
 import { emailCheckFetch, idCheckFetch } from "../middleware/JoinFetch";
 
 const joinPassSlice = createSlice({
-  name: "join",
+  name: "joinPass",
   initialState: {
     idCheck: false,
+    pwCheck: false,
     emailCheck: false,
     authNum: "",
+  },
+  reducers: {
+    emailNumCheck: (state, action) => {
+      console.log(action.payload);
+      state.emailCheck = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(idCheckFetch.pending, (state, action) => {
@@ -21,16 +28,17 @@ const joinPassSlice = createSlice({
       state.idCheck = false;
     });
     builder.addCase(emailCheckFetch.pending, (state, action) => {
-      state.emailCheck = false;
+      state.authNum = "";
     });
     builder.addCase(emailCheckFetch.fulfilled, (state, action) => {
-      state.emailCheck = action.payload.emailStatus;
-      console.log(state.emailCheck);
+      state.authNum = action.payload.authNum;
+      console.log(state.authNum);
     });
     builder.addCase(emailCheckFetch.rejected, (state, action) => {
-      state.emailCheck = false;
+      state.authNum = "";
     });
   },
 });
 
+export const joinPassAction = joinPassSlice.actions;
 export default joinPassSlice;

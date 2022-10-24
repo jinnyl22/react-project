@@ -31,11 +31,19 @@ class QnA extends Sequelize.Model {
             return moment(this.getDataValue("updatedAt")).format("YYYY/MM/DD HH:mm:ss");
           },
         },
+        deletedAt: {
+          type: Sequelize.DATE,
+          get() {
+            return moment(this.getDataValue("deletedAt")).format("YYYY/MM/DD HH:mm:ss");
+          },
+          allowNull: true,
+        },
       },
       {
         sequelize,
         underscored: true,
         timestamps: true,
+        paranoid: true,
         modelName: "QnA",
         tableName: "qna",
         charset: "utf8",
@@ -43,5 +51,9 @@ class QnA extends Sequelize.Model {
       }
     );
   }
-  static associate(db) {}
+  static associate(db) {
+    db.QnA.belongsTo(db.User, { foreignKey: "userId", targetKey: "id" });
+  }
 }
+
+module.exports = QnA;

@@ -2,10 +2,16 @@ import React from "react";
 import "../css/join.css";
 import { useState } from "react";
 import { JoinFetch, idCheckFetch, emailCheckFetch } from "../middleware/JoinFetch";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { joinPassAction } from "../redux/joinSlice";
 
 const Join = () => {
+  const authNumber = useSelector((state) => state.joinPass.authNum);
+  // console.log(authNumber);
+  const join = useSelector((state) => state.joinPass);
+  // console.log(join);
+
   const dispatch = useDispatch();
   const [joinValues, setJoinValues] = useState({
     userName: "",
@@ -28,6 +34,9 @@ const Join = () => {
   };
   const pwCheckInputHandler = (e) => {
     setJoinValues({ ...joinValues, pwCheck: e.target.value });
+    if (joinValues.userPw === joinValues.pwCheck) {
+      dispatch(joinPassAction.pwCheck(true));
+    }
   };
   const phoneInputHandler = (e) => {
     setJoinValues({ ...joinValues, userPhone: e.target.value });
@@ -38,6 +47,15 @@ const Join = () => {
   const authNumInputHandler = (e) => {
     setJoinValues({ ...joinValues, userAuthNum: e.target.value });
   };
+
+  function authNumCheckHandler() {
+    console.log(authNumber);
+    console.log(joinValues.userAuthNum);
+    if (authNumber === joinValues.userAuthNum) {
+      dispatch(joinPassAction.emailNumCheck(true));
+      alert("인증번호가 확인되었습니다.");
+    } else alert("인증번호가 다릅니다. 다시 확인해주세요.");
+  }
 
   return (
     <div>
@@ -52,6 +70,7 @@ const Join = () => {
             <input onChange={nameInputHandler} type="text" placeholder="이름을 입력해주세요" />
             <div className="j-blank"></div>
           </div>
+          <span className="check h-6 text-red-500 text-sm" />
           <div className="middle-id">
             <label>아이디</label>
             <input onChange={idInputHandler} type="text" placeholder="아이디를 입력해주세요" />
@@ -98,7 +117,7 @@ const Join = () => {
             <label>인증번호</label>
             <input onChange={authNumInputHandler} type="text" placeholder="인증번호를 입력해주세요" />
             <div className="j-btn-wrap">
-              <button onClick={() => {}}>인증확인</button>
+              <button onClick={authNumCheckHandler}>인증확인</button>
             </div>
           </div>
         </div>

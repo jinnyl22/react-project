@@ -70,9 +70,11 @@ module.exports.userEmailCheck = (userEmail, req, res) => {
           res.send("메일 error");
         } else console.log("메일 보내짐", info.response);
       });
-      res.send({ msg: "이메일이 발송되었습니다. 인증번호를 확인해주세요", emailStatus: true });
+      res.send({ msg: "이메일이 발송되었습니다. 인증번호를 확인해주세요", authNum: ranNum });
     } else {
-      res.send({ msg: "이미 가입된 이메일입니다. 다른 이메일을 입력해주세요", emailStatus: false });
+      res.send({ msg: "이미 가입된 이메일입니다. 다른 이메일을 입력해주세요", authNum: "" });
     }
   });
 };
+
+// module.exports.authNumCheck = (authNum) => {};

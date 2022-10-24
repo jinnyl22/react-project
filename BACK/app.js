@@ -4,6 +4,7 @@ const cors = require("cors");
 const app = express();
 const { sequelize } = require("./model/index");
 const { user_service, userIdCheck, userEmailCheck } = require("./service/user_service");
+const { qnaWrite } = require("./service/qna_service");
 
 app.listen(80, () => {
   console.log("http://localhost:80 on");
@@ -33,13 +34,20 @@ app.post("/join/check/id", (req, res) => {
   userIdCheck(req.body.id, req, res);
 });
 
-// app.post("/join/check/authnum", (req, res) => {
-
-// });
-
 app.post("/join/emailsend", (req, res) => {
   console.log(req.body);
   userEmailCheck(req.body.email, req, res);
+});
+
+// app.post("/join/check/authnum", (req, res) => {
+//   console.log(req.body.authNum);
+//   authNumCheck(req.body.authNum, req, res);
+// });
+
+app.post("/board/write", (req, res) => {
+  console.log(req.body);
+  const { qnaTitle, qnaContent } = req.body.create;
+  qnaWrite(qnaTitle, qnaContent, req, res);
 });
 
 sequelize

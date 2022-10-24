@@ -2,6 +2,7 @@ const Sequelize = require("sequelize");
 const config = require("../config/config");
 const Product = require("./products");
 const User = require("./users");
+const QnA = require("./qna");
 
 // config.js에 있는 DB 값으로 새로운 Sequelize 객체를 생성하여 db 객체에 넣어주고 다른 곳에서도 같은 Sequelize 객체를 사용할 수 있도록 db 객체를 export 해준다
 
@@ -17,7 +18,12 @@ const db = {}; // 여기와 실제 데이터베이스가 연결된다.
 db.sequelize = sequelize;
 db.User = User;
 db.Product = Product;
+db.QnA = QnA;
 
 User.init(sequelize);
+QnA.init(sequelize);
+
+User.associate(db);
+QnA.associate(db);
 
 module.exports = db;

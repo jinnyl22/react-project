@@ -15,7 +15,7 @@ const NoticeListFormSlice = createSlice({
 const BoardListFormSlice = createSlice({
   name: "boardListForm",
   initialState: {
-    list: [{ title: "게시판 제목" }],
+    list: [],
   },
   reducers: {
     listForm: (state, action) => {

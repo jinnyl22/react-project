@@ -75,7 +75,7 @@ const BoardListForm = () => {
                   <tr className="board-tbody">
                     <td className="board-num">{index + 1}</td>
                     <td className="board-title">
-                      <Link to={"/board/detail/" + el.num}>{el.title}</Link>
+                      <Link to={"/board/view/" + el.num}>{el.title}</Link>
                     </td>
                     <td className="board-name">{el.userName}</td>
                     <td className="board-date">{el.registDate}</td>
