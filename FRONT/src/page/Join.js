@@ -5,6 +5,7 @@ import { JoinFetch, idCheckFetch, emailCheckFetch } from "../middleware/JoinFetc
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { joinPassAction } from "../redux/joinSlice";
+import Swal from "sweetalert2";
 
 const Join = () => {
   const authNumber = useSelector((state) => state.joinPass.authNum);
@@ -32,11 +33,12 @@ const Join = () => {
   const pwInputHandler = (e) => {
     setJoinValues({ ...joinValues, userPw: e.target.value });
   };
+  // 비밀번호랑 비밀번호 확인이 같은지 확인해주는 곳
   const pwCheckInputHandler = (e) => {
     setJoinValues({ ...joinValues, pwCheck: e.target.value });
     if (joinValues.userPw === joinValues.pwCheck) {
       dispatch(joinPassAction.pwCheck(true));
-    }
+    } else Swal.fire("비밀번호가 일치하지 않습니다. 다시 확인해주세요.");
   };
   const phoneInputHandler = (e) => {
     setJoinValues({ ...joinValues, userPhone: e.target.value });
@@ -48,6 +50,7 @@ const Join = () => {
     setJoinValues({ ...joinValues, userAuthNum: e.target.value });
   };
 
+  // 인증번호 비교 체크 해주는 곳
   function authNumCheckHandler() {
     console.log(authNumber);
     console.log(joinValues.userAuthNum);
@@ -56,6 +59,8 @@ const Join = () => {
       alert("인증번호가 확인되었습니다.");
     } else alert("인증번호가 다릅니다. 다시 확인해주세요.");
   }
+
+  function joinPassHandler() {}
 
   return (
     <div>

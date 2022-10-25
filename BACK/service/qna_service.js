@@ -11,3 +11,13 @@ module.exports.qnaWrite = (title, content, req, res) => {
       res.send("글쓰기 실패");
     });
 };
+
+module.exports.qnaList = (index, req, res) => {
+  QnA.findAll({
+    limit: 10,
+    offset: index * 10,
+  }).then((e) => {
+    console.log(e);
+    res.send(e);
+  });
+};

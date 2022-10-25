@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { qnaListFetch } from "../middleware/qnaFetch";
 import "../css/list_form.css";
 
 const BoardListForm = () => {
@@ -12,10 +13,17 @@ const BoardListForm = () => {
   const BoardListForm = useSelector((state) => state.boardListForm.list);
   const NoticeListForm = useSelector((state) => state.noticeListForm.list);
 
+  const dispatch = useDispatch();
+
   // let user = { title: "", content: "", userName: userName, registDate: "2022 - 10 - 11" };
   useEffect(() => {
     setList(NoticeListForm);
+    dispatch(qnaListFetch(0));
   }, []);
+
+  useEffect(() => {
+    console.log(BoardListForm);
+  }, [BoardListForm]);
 
   return (
     <>
@@ -75,10 +83,10 @@ const BoardListForm = () => {
                   <tr className="board-tbody">
                     <td className="board-num">{index + 1}</td>
                     <td className="board-title">
-                      <Link to={"/board/view/" + el.num}>{el.title}</Link>
+                      <Link to={"/board/view/" + index}>{el.title}</Link>
                     </td>
-                    <td className="board-name">{el.userName}</td>
-                    <td className="board-date">{el.registDate}</td>
+                    <td className="board-name">{el.userId}</td>
+                    <td className="board-date">{el.createdAt}</td>
                   </tr>
                 </tbody>
               );

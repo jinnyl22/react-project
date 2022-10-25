@@ -17,7 +17,7 @@ function App() {
         {/* <Route path="/notice/write" element={<BoardWrite />} /> */}
         <Route path="/board/write" element={<BoardWrite />} />
         {/* prams로 idx를 써주면 자동으로 인덱스 번호가 들어감 */}
-        <Route path="/board/view/1" element={<QnaView />} />
+        <Route path="/board/view/:idx" element={<QnaView />} />
         <Route path="/auth" element={<Authority />} />
         <Route path="/auth/qna" element={<Authority />} />
         <Route path="/auth/nm" element={<Authority />} />

@@ -19,12 +19,19 @@ const BoardListFormSlice = createSlice({
   },
   reducers: {
     listForm: (state, action) => {
-      state.list = state.list.concat(action.payload);
+      state.list = action.payload;
     },
   },
 });
 
+// const BoardContentsSlice = createSlice({
+//   name : "BoardContents",
+//   initialState : {
+
+//   }
+// })
+
 export { BoardListFormSlice, NoticeListFormSlice };
 
-export const { BoardListForm } = BoardListFormSlice.actions;
-export const { NoticeListForm } = NoticeListFormSlice.actions;
+export const BoardListForm = BoardListFormSlice.actions;
+export const NoticeListForm = NoticeListFormSlice.actions;

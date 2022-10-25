@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 const { sequelize } = require("./model/index");
 const { user_service, userIdCheck, userEmailCheck } = require("./service/user_service");
-const { qnaWrite } = require("./service/qna_service");
+const { qnaWrite, qnaList } = require("./service/qna_service");
 
 app.listen(80, () => {
   console.log("http://localhost:80 on");
@@ -23,11 +23,15 @@ app.use(
   })
 );
 
-app.post("/join", (req, res) => {
-  const { userName, userId, userPw, userPhone, userEmail } = req.body;
+// 라우더 분리 해둔 것 불러옴
+const UserRouter = require("./routes/user_router"); // router.post('/', (req, res) => { ... 을 불러옴
+app.use("/user", UserRouter);
 
-  user_service(userName, userId, userPw, userPhone, userEmail, req, res);
-});
+// app.post("/join", (req, res) => {
+//   const { userName, userId, userPw, userPhone, userEmail } = req.body;
+
+//   user_service(userName, userId, userPw, userPhone, userEmail, req, res);
+// });
 
 app.post("/join/check/id", (req, res) => {
   console.log(req.body);
@@ -48,6 +52,11 @@ app.post("/board/write", (req, res) => {
   console.log(req.body);
   const { qnaTitle, qnaContent } = req.body.create;
   qnaWrite(qnaTitle, qnaContent, req, res);
+});
+
+app.post("/board/list", (req, res) => {
+  const idx = req.body.idx;
+  qnaList(idx, req, res);
 });
 
 sequelize
