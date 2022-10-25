@@ -10,7 +10,7 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Mypage" element={<Mypage />} />
-        <Route path="/join" element={<Join />} />
+        <Route path="/user/join" element={<Join />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/board" element={<Board />} />
         <Route path="/notice" element={<Board />} />

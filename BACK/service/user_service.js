@@ -3,37 +3,38 @@ const randomNum = require("./random_num");
 const { mailer } = require("../modules/common");
 const config = require("../config/config");
 
-// 아래 구문을 서비스랑 컨트롤러 분리해봄!
-// module.exports.user_service = (userName, userId, userPw, userPhone, userEmail, req, res) => {
-//   // 빈 값으로 넘어오면 DB에 저장을 할 수 없게
-//   userName !== "" && userId !== "" && userPw !== "" && userPhone !== "" && userEmail !== ""
-//     ? // userName&&userId&&userPw&&userPhone&&userEmail == "" ?
-//       // create -> 컬럼 생성 쿼리문
-//       User.create({ userName, userId, userPw, userPhone, userEmail })
-//         // 여기 e에는 생성된 컬럼과 데이터가 담긴다
-//         // 담기면 성공!
-//          여기서 담기면 미들웨어로 응답이 전달된다!
-//         .then((e) => {
-//           res.send("회원 가입 성공");
-//         })
-//         .catch((error) => {
-//           console.log(error);
-//           res.send("실패");
-//         })
-//     : res.send("모든 칸을 입력해주세요");
-// };
-
-// 회원가입이 되면 DB에 컬럼 생성
-module.exports.userJoin = async (userName, userId, userPw, userPhone, userEmail) => {
-  try {
-    console.log(userJoin);
-    return await User.create({ userName, userId, userPw, userPhone, userEmail });
-  } catch (err) {
-    console.error(err);
-    return null;
-  }
+// 아래 구문을 서비스랑 컨트롤러 분리해보기
+module.exports.userJoin = (userName, userId, userPw, userPhone, userEmail, req, res) => {
+  // 빈 값으로 넘어오면 DB에 저장을 할 수 없게
+  // userName !== "" && userId !== "" && userPw !== "" && userPhone !== "" && userEmail !== ""
+  //   ?
+  // create -> 컬럼 생성 쿼리문
+  User.create({ userName, userId, userPw, userPhone, userEmail })
+    // 여기 e에는 생성된 컬럼과 데이터가 담긴다
+    // 담기면 성공!
+    //  여기서 담기면 미들웨어로 응답이 전달된다!
+    .then((e) => {
+      res.send("DB에 저장됨");
+    })
+    .catch((error) => {
+      console.log(error);
+      res.send("저장 실패");
+    });
+  // : res.send("모든 칸을 입력해주세요");
 };
 
+// 회원가입이 되면 DB에 컬럼 생성
+// module.exports.userJoin = async (userName, userId, userPw, userPhone, userEmail) => {
+//   try {
+//     console.log(userJoin);
+//     return await User.create({ userName, userId, userPw, userPhone, userEmail });
+//   } catch (err) {
+//     console.error(err);
+//     return null;
+//   }
+// };
+
+// 아이디 중복검사를 위해 DB에서 동일한 아이디가 있는지 조회
 module.exports.userIdCheck = (userId, req, res) => {
   User.findOne({
     where: { userId },
@@ -46,6 +47,7 @@ module.exports.userIdCheck = (userId, req, res) => {
     });
 };
 
+// 이메일 중복검사, 같은 이메일이 없으면 인증번호 이메일 전송
 module.exports.userEmailCheck = (userEmail, req, res) => {
   User.findOne({
     where: { userEmail },
@@ -89,5 +91,3 @@ module.exports.userEmailCheck = (userEmail, req, res) => {
     }
   });
 };
-
-// module.exports.authNumCheck = (authNum) => {};

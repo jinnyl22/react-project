@@ -14,6 +14,9 @@ const joinPassSlice = createSlice({
       console.log(action.payload);
       state.emailCheck = action.payload;
     },
+    passwordCheck: (state, action) => {
+      state.pwCheck = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(idCheckFetch.pending, (state, action) => {
@@ -22,7 +25,7 @@ const joinPassSlice = createSlice({
     builder.addCase(idCheckFetch.fulfilled, (state, action) => {
       console.log(action.payload);
       state.idCheck = action.payload.idstatus;
-      console.log(state.idCheck);
+      console.log("아이디 중복 체크 완료 " + state.idCheck);
     });
     builder.addCase(idCheckFetch.rejected, (state, action) => {
       state.idCheck = false;

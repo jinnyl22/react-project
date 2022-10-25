@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 import "../css/write_form.css";
 
 const QnaView = () => {
   const BoardListForm = useSelector((state) => state.boardListForm.list);
+
   useEffect(() => {
     console.log(BoardListForm);
   }, [BoardListForm]);
+
+  // 파람스 값을 가져와 주는 hook
   const params = useParams();
   console.log(params);
+
   return (
     <div className="board-detail">
       <div className="board-detail-container">

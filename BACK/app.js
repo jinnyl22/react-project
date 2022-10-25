@@ -3,7 +3,7 @@ dot.config();
 const cors = require("cors");
 const app = express();
 const { sequelize } = require("./model/index");
-const { user_service, userIdCheck, userEmailCheck } = require("./service/user_service");
+const { userJoin, userIdCheck, userEmailCheck } = require("./service/user_service");
 const { qnaWrite, qnaList } = require("./service/qna_service");
 
 app.listen(80, () => {
@@ -25,23 +25,14 @@ app.use(
 
 // 라우더 분리 해둔 것 불러옴
 const UserRouter = require("./routes/user_router"); // router.post('/', (req, res) => { ... 을 불러옴
+// UserRouter에서 불러온 컨트롤러(내보낸 모듈)는 /user뒤의 url로 붙음
 app.use("/user", UserRouter);
 
 // app.post("/join", (req, res) => {
 //   const { userName, userId, userPw, userPhone, userEmail } = req.body;
 
-//   user_service(userName, userId, userPw, userPhone, userEmail, req, res);
+//   userJoin(userName, userId, userPw, userPhone, userEmail, req, res);
 // });
-
-app.post("/join/check/id", (req, res) => {
-  console.log(req.body);
-  userIdCheck(req.body.id, req, res);
-});
-
-app.post("/join/emailsend", (req, res) => {
-  console.log(req.body);
-  userEmailCheck(req.body.email, req, res);
-});
 
 // app.post("/join/check/authnum", (req, res) => {
 //   console.log(req.body.authNum);

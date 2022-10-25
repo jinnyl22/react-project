@@ -7,7 +7,7 @@ import "../css/list_form.css";
 const BoardListForm = () => {
   const nav = useNavigate();
   const [list, setList] = useState([]);
-  const boardList = useRef("공지사항");
+  const boardList = useRef();
   const postUrl = useRef("notice");
 
   const BoardListForm = useSelector((state) => state.boardListForm.list);
@@ -15,9 +15,10 @@ const BoardListForm = () => {
 
   const dispatch = useDispatch();
 
-  // let user = { title: "", content: "", userName: userName, registDate: "2022 - 10 - 11" };
+  // 페이지 네이션
   useEffect(() => {
     setList(NoticeListForm);
+    // qnaListFetch(0)안의 숫자가 올라가면 페이지 네이션이 된다
     dispatch(qnaListFetch(0));
   }, []);
 
