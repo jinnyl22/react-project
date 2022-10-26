@@ -1,7 +1,11 @@
 import React from "react";
 
 const Mypage = () => {
-  return <div>Mypage</div>;
+  return (
+    <div>
+      <div className="w-160"></div>
+    </div>
+  );
 };
 
 export default Mypage;

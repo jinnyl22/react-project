@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const AuthListForm = () => {
+  const location = useLocation();
   const nav = useNavigate();
   const [list, setList] = useState([]);
   const sideList = useRef("결제 내역 관리");

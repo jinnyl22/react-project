@@ -1,6 +1,7 @@
 // 미들웨어는 대문자로 이름을 만들지 않아도 됨!
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { Login } from "../page";
 
 // createAsyncThunk() -> 비동기 작업을 처리하는 action을 만들어줌
 const JoinFetch = createAsyncThunk("JoinSlice/JoinFetch", async (state) => {
@@ -46,6 +47,7 @@ const idCheckFetch = createAsyncThunk("joinSlice/idCheckFetch", async (id) => {
   })
     .then((e) => {
       console.log(e.data);
+      alert(e.data.msg);
       return e.data;
     })
     .catch((error) => {

@@ -10,11 +10,11 @@ const Header = () => {
         <div className="container">
           <img src={header_hand} alt="후랑크 손" className="frank-hand" />
           <div className="top">
-            <Link to="/join">회원가입</Link>
+            <Link to="/user/join">회원가입</Link>
             <div className="top-bar"></div>
             <Link to="/login">로그인</Link>
             <div className="top-bar"></div>
-            {/* <Link to="/mypage">마이페이지</Link> */}
+            <Link to="/mypage">마이페이지</Link>
             <Link to="/auth">관리자 페이지</Link>
             <div className="top-bar"></div>
             <Link to="/notice">고객센터</Link>

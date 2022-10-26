@@ -41,10 +41,10 @@ class User extends Sequelize.Model {
           allowNull: false,
           defaultValue: 1,
         },
-        admin: {
-          type: Sequelize.BOOLEAN,
+        userPoint: {
+          type: Sequelize.INTEGER,
           allowNull: false,
-          defaultValue: 0,
+          defaultValue: 2000,
         },
         refreshToken: {
           type: Sequelize.STRING,
