@@ -1,6 +1,5 @@
 import React from "react";
 import "../css/mypage.css";
-import { p_water } from "../img";
 
 const Mypage = () => {
   return (

@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Main, Login, Join, Shop, Board, Mypage, BoardWrite, Authority, QnaView } from "./page";
+import { Main, Login, Join, ShopAll, Board, Mypage, BoardWrite, Authority, QnaView } from "./page";
 import { Header, Footer } from "./components";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
         <Route path="/user/login" element={<Login />} />
         <Route path="/user/mypage" element={<Mypage />} />
         <Route path="/user/join" element={<Join />} />
-        <Route path="/shop" element={<Shop />} />
+        <Route path="/shop/all" element={<ShopAll />} />
         <Route path="/board" element={<Board />} />
         <Route path="/notice" element={<Board />} />
         {/* <Route path="/notice/write" element={<BoardWrite />} /> */}
