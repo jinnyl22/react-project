@@ -140,3 +140,26 @@ th {
 .auth-s-list {
   padding-bottom: 15px;
 }
+
+/* 여기서부터 페이지네이션 */
+.board-pagenation {
+  width: 820px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.board-page-num {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgb(244, 244, 244);
+  border-bottom: 1px solid rgb(244, 244, 244);
+  border-right: 1px solid rgb(244, 244, 244);
+  border-left: none;
+  color: rgb(76, 76, 76);
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+}

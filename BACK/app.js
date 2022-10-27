@@ -28,24 +28,14 @@ const UserRouter = require("./routes/user_router"); // router.post('/', (req, re
 // UserRouter에서 불러온 컨트롤러(내보낸 모듈)는 /user뒤의 url로 붙음
 app.use("/user", UserRouter);
 
-// app.post("/join", (req, res) => {
-//   const { userName, userId, userPw, userPhone, userEmail } = req.body;
-
-//   userJoin(userName, userId, userPw, userPhone, userEmail, req, res);
-// });
-
-// app.post("/join/check/authnum", (req, res) => {
-//   console.log(req.body.authNum);
-//   authNumCheck(req.body.authNum, req, res);
-// });
-
 app.post("/board/write", (req, res) => {
   console.log(req.body);
   const { qnaTitle, qnaContent } = req.body.create;
   qnaWrite(qnaTitle, qnaContent, req, res);
 });
 
-app.post("/board/list", (req, res) => {
+app.post("/board", (req, res) => {
+  console.log(req.body); // { idx: 0 }
   const idx = req.body.idx;
   qnaList(idx, req, res);
 });

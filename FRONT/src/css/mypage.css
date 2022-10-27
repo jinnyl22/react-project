@@ -1,0 +1,83 @@
+.mypage-container {
+  width: 820px;
+  margin: 0 auto;
+}
+
+.mypage-box {
+  border: 1px solid rgb(224, 224, 224);
+  border-radius: 20px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 13px 0 30px 0;
+}
+
+.mypage-top {
+  width: 820px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mypage-bor-bot {
+  width: 762px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.mypage-id {
+  box-sizing: border-box;
+  font-size: 40px;
+  font-weight: 300;
+  margin-left: 30px;
+  margin-top: 40px;
+}
+.mypage-id span:nth-child(1) {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.my-id {
+  color: #ea5b50;
+}
+
+.mypage-point {
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 30px;
+}
+
+.mypage-top-r {
+  width: 130px;
+  height: 130px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  background-size: cover;
+  background-position-y: bottom;
+  margin: 0 30px 0 0;
+  background-image: url(../img/products/p_water.png);
+}
+
+.mypage-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.mypage-info {
+  margin: 8px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.mypage-name,
+.mypage-email,
+.mypage-phone {
+  width: 52px;
+}
+
+.my {
+  font-size: 17px;
+  margin-left: 190px;
+}

@@ -21,6 +21,6 @@ router.post("/join/emailsend", (req, res) => {
   userEmailCheck(req.body.email, req, res);
 });
 
-router.post("/mypage", (req, res) => {});
+// router.post("/mypage", (req, res) => {});
 
 module.exports = router;

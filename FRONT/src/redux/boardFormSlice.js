@@ -7,7 +7,7 @@ const NoticeListFormSlice = createSlice({
   },
   reducers: {
     listForm: (state, action) => {
-      state.list = state.list.concat(action.payload);
+      state.list = action.payload;
     },
   },
 });

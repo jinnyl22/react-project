@@ -12,7 +12,7 @@ const BoardWrite = () => {
   // console.log(location.pathname.replace("/write", ""));
 
   const qnaSubmitHandler = (e) => {
-    // e.preventDefault() -> 나중에 알아보기
+    // preventDefault() ->  form 안에 submit 역할을 하는 버튼을 눌렀어도 창이 새로고침 되지 않게 막아주는 것
     e.preventDefault();
     // console.log(e.target.qnaTitle.value);
     // console.log(e.target.qnaContent.value);

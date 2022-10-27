@@ -11,13 +11,15 @@ const qnaWriteFetch = createAsyncThunk("qnaWrite/create", async (create) => {
   return qnaWriteFetchResult.data;
 });
 
+//
 function qnaListFetch(idx) {
   return async (dispatch, getState) => {
-    const qnaListFetchResult = await axios.post("http://localhost:80/board/list", { idx });
-    console.log(BoardListForm);
+    const qnaListFetchResult = await axios.post("http://localhost:80/board", { idx: idx });
+    // qnaListFetchResult.data에 문의사항 글이 객체로 들어온다
+    console.log(qnaListFetchResult.data);
+    // BoardListForm 슬라이스에 글 객체를 dispatch 해준다
     dispatch(BoardListForm.listForm(qnaListFetchResult.data));
   };
 }
 
-// export const qnaListAction = { qnaListFetch };
 export { qnaWriteFetch, qnaListFetch };
