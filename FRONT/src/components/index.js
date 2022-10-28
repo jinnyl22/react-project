@@ -1,12 +1,11 @@
 import Header from "./Header";
 import Footer from "./Footer";
-import List_form from "./ListForm";
-import Pagenation from "./Pagenation";
-import View_form from "./View_form";
-import WriteForm from "./WriteForm";
+import AuthListForm from "./AuthListForm";
+import Pagination from "./Pagination";
 import Timer from "./Timer";
 import SlideTop from "./SlideTop";
-import ListForm from "./ListForm";
-import SideList from "./SideList";
+import BoardListForm from "./BoardListForm";
+import BoardViewForm from "./BoardViewForm";
+import ProductList from "./ProductList";
 
-export { Header, Footer, List_form, Pagenation, View_form, WriteForm, Timer, SlideTop, ListForm, SideList };
+export { Header, Footer, Pagination, Timer, SlideTop, AuthListForm, BoardListForm, BoardViewForm, ProductList };

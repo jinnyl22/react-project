@@ -34,7 +34,7 @@ class Product extends Sequelize.Model {
           allowNull: false,
         },
         productStatus: {
-          type: Sequelize.BOOLEAN,
+          type: Sequelize.TINYINT,
           allowNull: false,
           defaultValue: 0,
         },

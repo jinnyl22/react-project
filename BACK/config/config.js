@@ -5,11 +5,17 @@ dot.config();
 
 const config = {
   dev: {
-    user: "root",
+    username: "root",
     password: process.env.DB_PASSWORD,
     database: "react-project",
     host: "127.0.0.1",
     dialect: "mysql",
+    // 아래와 같이 나라지정을 해주어야 나라에 맞춰 시간이 들어온다
+    timezone: "Asia/Seoul",
+  },
+  mailer: {
+    email: process.env.EMAIL,
+    pw: process.env.EMAIL_PW,
   },
 };
 

@@ -11,5 +11,7 @@ import keyring from "./keyring.jpg";
 import sticker from "./sticker.jpg";
 import header_hand from "./SVG/header_hand.svg";
 import header_body from "./SVG/header_body.svg";
+import p_water from "./products/p_water.png";
+import p_letter1 from "./products/p_letter_mock1.jpg";
 
-export { logo, searchimg, slide1, slide2, slide3, slide4, slide5, slide6, grip, keyring, sticker, header_hand, header_body };
+export { logo, searchimg, slide1, slide2, slide3, slide4, slide5, slide6, grip, keyring, sticker, header_hand, header_body, p_water, p_letter1 };

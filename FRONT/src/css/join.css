@@ -1,0 +1,133 @@
+.j-container {
+  width: 640px;
+  margin: 0px auto;
+  padding: 0px;
+}
+
+.j-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.join {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 28px;
+  line-height: 35px;
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: -1px;
+  color: rgb(51, 51, 51);
+}
+
+.j-line {
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgb(51, 51, 51);
+  font-size: 12px;
+  color: rgb(102, 102, 102);
+  line-height: 17px;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.j-middle input {
+  width: 70%;
+  height: 46px;
+  padding: 0px 11px 1px 15px;
+  border-radius: 4px;
+  border: 1px solid rgb(221, 221, 221);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: rgb(51, 51, 51);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.middle-id {
+  display: inline-flex;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.middle-pw {
+  display: inline-flex;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.middle-pw-check {
+  display: inline-flex;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.middle-id label {
+  width: 139px;
+  padding-top: 12px;
+  font-weight: 500;
+  color: rgb(51, 51, 51);
+  line-height: 20px;
+}
+
+.j-btn-wrap {
+  width: 120px;
+  margin-left: 8px;
+}
+
+.j-btn-wrap button {
+  display: block;
+  padding: 0px 10px;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  height: 44px;
+  border-radius: 3px;
+  color: #ea5b50;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid#ea5b50;
+}
+
+.middle-pw label {
+  width: 139px;
+  padding-top: 12px;
+  font-weight: 500;
+  color: rgb(51, 51, 51);
+  line-height: 20px;
+}
+
+.j-blank {
+  width: 120px;
+  margin-left: 8px;
+}
+
+.middle-pw-check label {
+  width: 139px;
+  padding-top: 12px;
+  font-weight: 500;
+  color: rgb(51, 51, 51);
+  line-height: 20px;
+}
+
+.join-bt {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgb(247, 247, 247);
+  padding: 40px 0px;
+  margin-top: 20px;
+}
+
+.join-bt button {
+  display: block;
+  padding: 0px 10px;
+  text-align: center;
+  overflow: hidden;
+  width: 240px;
+  height: 56px;
+  border-radius: 3px;
+  color: rgb(255, 255, 255);
+  background-color: #ea5b50;
+  border: 0px none;
+  font-size: 16px;
+  font-weight: 500;
+}

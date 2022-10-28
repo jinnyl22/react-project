@@ -10,6 +10,7 @@ class User extends Sequelize.Model {
         userName: {
           type: Sequelize.STRING(20),
           allowNull: false,
+          defaultValue: "",
         },
         userId: {
           type: Sequelize.STRING(40),
@@ -24,11 +25,6 @@ class User extends Sequelize.Model {
           type: Sequelize.STRING(80),
           allowNull: false,
           unique: true,
-        },
-        userBirth: {
-          type: Sequelize.STRING(12),
-          allowNull: true,
-          defaultValue: "",
         },
         userPhone: {
           type: Sequelize.STRING(12),
@@ -45,9 +41,15 @@ class User extends Sequelize.Model {
           allowNull: false,
           defaultValue: 1,
         },
-        admin: {
-          type: Sequelize.BOOLEAN,
+        userPoint: {
+          type: Sequelize.INTEGER,
           allowNull: false,
+          defaultValue: 2000,
+        },
+        admin: {
+          type: Sequelize.TINYINT(1),
+          allowNull: false,
+          defaultValue: 0,
         },
         refreshToken: {
           type: Sequelize.STRING,
@@ -61,6 +63,7 @@ class User extends Sequelize.Model {
           get() {
             return moment(this.getDataValue("last_login")).format("YYYY/MM/DD HH:mm:ss");
           },
+          allowNull: true,
         },
         createdAt: {
           type: Sequelize.DATE,
@@ -81,6 +84,7 @@ class User extends Sequelize.Model {
           get() {
             return moment(this.getDataValue("deletedAt")).format("YYYY/MM/DD HH:mm:ss");
           },
+          allowNull: true,
         },
       },
       {
@@ -95,7 +99,9 @@ class User extends Sequelize.Model {
       }
     );
   }
-  static associate(db) {}
+  static associate(db) {
+    db.User.hasMany(db.QnA, { foreignKey: "userId", sourceKey: "userId" });
+  }
 }
 
 module.exports = User;

@@ -1,27 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { ListForm, SideList } from "../components";
-import "../css/board.css";
+import { BoardListForm } from "../components";
 
 const Board = () => {
   return (
     <div>
-      <div className="notice-page">
-        <SideList />
-        <div className="board">
-          <div className="board-container">
-            <div className="board-top">
-              <h3>문의사항</h3>
-              <span>배송, 상품, 기타</span>
-            </div>
-            <div className="write-btn">
-              <Link to="/board/write">
-                <button>글쓰기</button>
-              </Link>
-            </div>
-            <ListForm />
-          </div>
-        </div>
+      <div style={{ width: "1050px", padding: "50px 0px 80px", margin: "0px auto", display: "flex" }}>
+        <BoardListForm />
       </div>
     </div>
   );

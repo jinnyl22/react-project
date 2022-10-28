@@ -1,3 +1,15 @@
+.board {
+  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+}
+.board-list-cont {
+  width: 1050px;
+  padding: 50px 0px 80px;
+  margin: 0px auto;
+  display: flex;
+}
+
 .board-thead {
   width: 100%;
   table-layout: fixed;
@@ -42,4 +54,112 @@ th {
   padding: 20px 0px;
   text-align: center;
   color: rgb(153, 153, 153);
+}
+
+.side-box {
+  width: 180px;
+  padding: 15px 0px 0px 0px;
+}
+
+.notice-box {
+  padding-bottom: 15px;
+}
+
+.notice-box span:hover {
+  color: #ea5b50;
+  cursor: pointer;
+}
+
+.board-box span:hover {
+  color: #ea5b50;
+  cursor: pointer;
+}
+
+.board-page {
+  width: 1050px;
+  padding: 50px 0px 80px;
+  margin: 0px auto;
+  display: flex;
+}
+
+.board-container {
+  width: 820px;
+  margin-right: 30px;
+}
+
+.board-top {
+  display: flex;
+  align-items: center;
+  padding: 10px 0px 37px;
+}
+
+.board-top h3 {
+  font-weight: 500;
+  font-size: 24px;
+  color: rgb(51, 51, 51);
+  letter-spacing: -0.5px;
+}
+
+.board-top span {
+  padding-left: 15px;
+  font-size: 14px;
+  letter-spacing: -0.3px;
+  color: rgb(153, 153, 153);
+  line-height: 20px;
+}
+
+.write-btn {
+  display: flex;
+  justify-content: end;
+  margin: 0 10px 20px 0;
+}
+
+.write-btn button {
+  color: rgb(255, 255, 255);
+  background-color: #ea5b50;
+  border-radius: 3px;
+  border: 0;
+  width: 50px;
+  height: 23px;
+  cursor: pointer;
+}
+
+.write-btn button:hover {
+  color: #ea5b50;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #ea5b50;
+}
+
+.board-container table {
+  width: 100%;
+  border-bottom: 1px solid rgb(244, 244, 244);
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.auth-s-list {
+  padding-bottom: 15px;
+}
+
+/* 여기서부터 페이지네이션 */
+.board-pagenation {
+  width: 820px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.board-page-num {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgb(244, 244, 244);
+  border-bottom: 1px solid rgb(244, 244, 244);
+  border-right: 1px solid rgb(244, 244, 244);
+  border-left: none;
+  color: rgb(76, 76, 76);
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
 }

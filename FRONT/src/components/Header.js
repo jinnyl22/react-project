@@ -2,26 +2,58 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { logo, searchimg, header_hand, header_body } from "../img";
 import "../css/header.css";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const isAdmin = useSelector((state) => state.login.admin);
+  const isLogin = useSelector((state) => state.login.isLogin);
+  const userId = useSelector((state) => state.login.id);
+
   return (
     <div>
       <div className="header">
         <div className="container">
           <img src={header_hand} alt="후랑크 손" className="frank-hand" />
           <div className="top">
-            <Link to="/join">회원가입</Link>
-            <div className="top-bar"></div>
-            <Link to="/login">로그인</Link>
-            <div className="top-bar"></div>
-            {/* <Link to="/mypage">마이페이지</Link> */}
-            <Link to="/auth">관리자 페이지</Link>
-            <div className="top-bar"></div>
-            <Link to="/board">고객센터</Link>
-            <div className="top-bar"></div>
+            {isLogin == true ? (
+              isAdmin == 1 ? (
+                <>
+                  <div>{userId}</div>
+                  <div className="top-bar"></div>
+                  <Link to="/auth">관리자 페이지</Link>
+                  {/* <Link to="/user/mypage">마이페이지</Link> */}
+                  {/* <div className="top-bar"></div>
+            <Link to="/notice">고객센터</Link> */}
+                  <div className="top-bar"></div>
+                </>
+              ) : (
+                <>
+                  <div>{userId}</div>
+                  <div className="top-bar"></div>
+                  {/* <Link to="/auth">관리자 페이지</Link> */}
+                  <Link to="/user/mypage">마이페이지</Link>
+                  {/* <div className="top-bar"></div>
+            <Link to="/notice">고객센터</Link> */}
+                  <div className="top-bar"></div>
+                </>
+              )
+            ) : (
+              <>
+                <Link to="/user/join">회원가입</Link>
+                <div className="top-bar"></div>
+                <Link to="/user/login">로그인</Link>
+                {/* <div className="top-bar"></div> */}
+                {/* <Link to="/auth">관리자 페이지</Link>
+                <Link to="/user/mypage">마이페이지</Link> */}
+                {/* <div className="top-bar"></div>
+            <Link to="/notice">고객센터</Link> */}
+                <div className="top-bar"></div>
+              </>
+            )}
+
             <div className="cs">
               <Link to="/board">
-                장바구니
+                고객센터
                 <span className="triangle"></span>
               </Link>
               <div className="dropdown-list">
@@ -54,7 +86,7 @@ const Header = () => {
             <div className="lnb">
               <ul>
                 <li>
-                  <Link to="/shop">전체상품</Link>
+                  <Link to="/shop/all">전체상품</Link>
                 </li>
                 <li>베스트</li>
                 <li>신상품</li>
