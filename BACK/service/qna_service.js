@@ -1,11 +1,18 @@
-const { QnA } = require("../model");
+const { QnA, User } = require("../model");
 
 // 문의사항 게시판에 글 데이터가 들어감
-module.exports.qnaWrite = (title, content, req, res) => {
-  console.log(title, content);
-  QnA.create({ title, content })
-    .then((e) => {
-      res.send("글이 등록 되었습니다!");
+module.exports.qnaWrite = (title, content, userId, req, res) => {
+  User.findOne({
+    where: { userId },
+  })
+    .then(async (user) => {
+      await QnA.create({
+        userId: user.userId,
+        title,
+        content,
+      }).then((e) => {
+        res.send("글이 등록 되었습니다!");
+      });
     })
     .catch((error) => {
       console.log(error);

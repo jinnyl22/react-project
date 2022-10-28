@@ -1,4 +1,4 @@
-const { User } = require("../model");
+const { User, Admin } = require("../model");
 const randomNum = require("./random_num");
 const { mailer } = require("../modules/common");
 const config = require("../config/config");
@@ -91,3 +91,31 @@ module.exports.userEmailCheck = (userEmail, req, res) => {
     }
   });
 };
+
+// 유저 로그인
+module.exports.userLogin = (id, pw, req, res) => {
+  User.findOne({
+    where: { userId: id, userPw: pw },
+  })
+    .then((e) => {
+      console.log(e);
+      e !== null ? res.send({ id: id, isLogin: true, admin: e.admin }) : res.send({ id: "", isLogin: false, admin: 0 });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+// 관리자 로그인
+// module.exports.adminLogin = (id, pw, req, res) => {
+//   Admin.findOne({
+//     where: { adminId: id, adminPw: pw },
+//   })
+//     .then((e) => {
+//       console.log(e);
+//       e !== null ? res.send({ id: id, isAdmin: true, adminStatus: true }) : res.send({ id: "", isAdmin: false, adminStatus: false });
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// };

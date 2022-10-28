@@ -52,7 +52,7 @@ class QnA extends Sequelize.Model {
     );
   }
   static associate(db) {
-    db.QnA.belongsTo(db.User, { foreignKey: "userId", targetKey: "id" });
+    db.QnA.belongsTo(db.User, { foreignKey: "userId", targetKey: "userId" });
   }
 }
 

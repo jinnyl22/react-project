@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { qnaWriteFetch } from "../middleware/qnaFetch";
 
@@ -11,6 +11,8 @@ const BoardWrite = () => {
   const location = useLocation();
   // console.log(location.pathname.replace("/write", ""));
 
+  const userId = useSelector((state) => state.login.id);
+
   const qnaSubmitHandler = (e) => {
     // preventDefault() ->  form 안에 submit 역할을 하는 버튼을 눌렀어도 창이 새로고침 되지 않게 막아주는 것
     e.preventDefault();
@@ -19,7 +21,7 @@ const BoardWrite = () => {
     const qnaTitle = e.target.qnaTitle.value;
     const qnaContent = e.target.qnaContent.value;
 
-    dispatch(qnaWriteFetch({ qnaTitle, qnaContent }));
+    dispatch(qnaWriteFetch({ qnaTitle, qnaContent, userId }));
     nav(location.pathname.replace("/write", ""));
     // console.log(dis);
   };

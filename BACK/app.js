@@ -7,7 +7,7 @@ const { userJoin, userIdCheck, userEmailCheck } = require("./service/user_servic
 const { qnaWrite, qnaList } = require("./service/qna_service");
 
 app.listen(80, () => {
-  console.log("http://localhost:80 on");
+  console.log("http://localhos/:80 on");
 });
 
 app.use(cors());
@@ -30,8 +30,8 @@ app.use("/user", UserRouter);
 
 app.post("/board/write", (req, res) => {
   console.log(req.body);
-  const { qnaTitle, qnaContent } = req.body.create;
-  qnaWrite(qnaTitle, qnaContent, req, res);
+  const { qnaTitle, qnaContent, userId } = req.body;
+  qnaWrite(qnaTitle, qnaContent, userId, req, res);
 });
 
 app.post("/board", (req, res) => {

@@ -46,6 +46,11 @@ class User extends Sequelize.Model {
           allowNull: false,
           defaultValue: 2000,
         },
+        admin: {
+          type: Sequelize.TINYINT(1),
+          allowNull: false,
+          defaultValue: 0,
+        },
         refreshToken: {
           type: Sequelize.STRING,
           allowNull: true,
@@ -95,7 +100,7 @@ class User extends Sequelize.Model {
     );
   }
   static associate(db) {
-    db.User.hasMany(db.QnA, { foreignKey: "userId", sourceKey: "id" });
+    db.User.hasMany(db.QnA, { foreignKey: "userId", sourceKey: "userId" });
   }
 }
 

@@ -35,10 +35,12 @@ const Join = () => {
   };
   const pwInputHandler = (e) => {
     setJoinValues({ ...joinValues, userPw: e.target.value });
+    console.log(joinValues.userPw);
   };
   // 비밀번호랑 비밀번호 확인이 같은지 확인해주는 곳
   const pwCheckInputHandler = (e) => {
     setJoinValues({ ...joinValues, pwCheck: e.target.value });
+    console.log(joinValues.pwCheck);
   };
   const phoneInputHandler = (e) => {
     setJoinValues({ ...joinValues, userPhone: e.target.value });
@@ -66,24 +68,28 @@ const Join = () => {
     } else alert("인증번호가 다릅니다. 다시 확인해주세요.");
   }
 
+  // 다시 회원가입으로 돌아왔을 때 상태값 업데이트를 해주어야함..ㅠㅠ
+  // useEffect(()=>{
+
+  // },[])
+
   console.log(joinPassId);
-  console.log(joinPassPw);
   console.log(joinPassEmail);
 
   const joinPassHandler = () => {
     const keys = Object.keys(joinValues);
+    console.log(joinPassId && joinPassEmail === true);
     if (joinValues.userPw !== "" && joinValues.pwCheck !== "") {
       if (joinValues.userPw === joinValues.pwCheck) {
-        dispatch(joinPassAction.passwordCheck(true));
         for (let i = 0; i < keys.length; i++) {
           if (joinValues[keys[i]] === "") {
             return alert("모든 칸을 입력해주세요.");
           }
         }
-        if (joinPassId && joinPassPw && joinPassEmail === true) {
+        if (joinPassId && joinPassEmail === true) {
           dispatch(JoinFetch(joinValues));
           alert("회원가입을 축하드립니다! 로그인 후 이용해주세요 :)");
-          nav("/");
+          window.location.href = "/";
         } else alert("중복 확인 및 인증번호 확인요청");
       } else alert("비밀번호가 일치하지 않습니다. 다시 확인해주세요.");
     } else alert("비밀번호를 입력하세요.");
@@ -127,12 +133,12 @@ const Join = () => {
           </div>
           <div className="middle-pw">
             <label>비밀번호</label>
-            <input onChange={pwInputHandler} type="text" placeholder="비밀번호를 입력해주세요" />
+            <input onChange={pwInputHandler} type="password" placeholder="비밀번호를 입력해주세요" />
             <div className="j-blank"></div>
           </div>
           <div className="middle-pw-check">
             <label>비밀번호 확인</label>
-            <input onChange={pwCheckInputHandler} type="text" placeholder="비밀번호를 한번 더 입력해주세요" />
+            <input onChange={pwCheckInputHandler} type="password" placeholder="비밀번호를 한번 더 입력해주세요" />
             <div className="j-blank"></div>
           </div>
           <div className="middle-pw-check">

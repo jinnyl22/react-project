@@ -93,7 +93,7 @@ const BoardListForm = () => {
             {/* 공지사항 목록 그려주는 부분 */}
             {location && location.pathname == "/notice"
               ? NoticeListForm.map((el, index) => {
-                  console.log(index);
+                  console.log(el);
                   // 태그를 반환해준다 (나중에 리스트를 컴포넌트로 만들어서 그려주면 훨씬 깔끔하다))
                   return (
                     <tbody key={index}>
@@ -111,7 +111,7 @@ const BoardListForm = () => {
               : // 문의사항 목록 그려주는 부분
                 BoardListForm.map((el, index) => {
                   // 0번 부터 개수대로 들어옴
-                  console.log(index);
+                  console.log(el);
                   // 태그를 반환해준다 (나중에 리스트를 컴포넌트로 만들어서 그려주면 훨씬 깔끔하다))
                   return (
                     <tbody key={index}>
