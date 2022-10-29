@@ -4,7 +4,7 @@ import axios from "axios";
 // 유저 로그인 상태 확인
 const loginFetch = createAsyncThunk("loginSlice/isLogin", async (userLogin) => {
   console.log(userLogin);
-  const loginFetchResult = await axios.post("http://192.168.0.198:80/user/login", userLogin);
+  const loginFetchResult = await axios.post("http://localhost:8000/user/login", userLogin);
   console.log(loginFetchResult.data);
   // alert(loginFetchResult.data);
   return loginFetchResult.data;

@@ -9,7 +9,7 @@ const JoinFetch = createAsyncThunk("JoinSlice/JoinFetch", async (state) => {
   // axios를 통해 요청을 서버로 보내주고 서버에서 처리 후 다시 데이터를 클라이언트에 응답해준다!
   const JoinResult = await axios({
     method: "post",
-    url: "http://192.168.0.198:80/user/join",
+    url: "http://localhost:8000/user/join",
     // 회원가입에서 입력한 값이 state에 담긴다
     data: state,
   })
@@ -41,7 +41,7 @@ const idCheckFetch = createAsyncThunk("joinSlice/idCheckFetch", async (id) => {
   console.log(id);
   const idcheckResult = await axios({
     method: "post",
-    url: "http://192.168.0.198:80/user/join/check/id",
+    url: "http://localhost:8000/user/join/check/id",
     // 회원가입에서 입력한 값이 state에 담긴다
     data: id,
   })
@@ -61,7 +61,7 @@ const emailCheckFetch = createAsyncThunk("joinSlice/emailCheckFetch", async (ema
   console.log(email);
   const emailCheckResult = await axios({
     method: "post",
-    url: "http://192.168.0.198:80/user/join/emailsend",
+    url: "http://localhost:8000/user/join/emailsend",
     data: email,
   })
     .then((e) => {

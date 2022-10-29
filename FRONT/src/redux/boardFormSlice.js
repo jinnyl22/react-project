@@ -16,6 +16,8 @@ const BoardListFormSlice = createSlice({
   name: "boardListForm",
   initialState: {
     list: [],
+    // 글의 전체 갯수를 스토어에 저장시켜줌
+    count: 0,
   },
   reducers: {
     listForm: (state, action) => {

@@ -4,10 +4,10 @@ const cors = require("cors");
 const app = express();
 const { sequelize } = require("./model/index");
 const { userJoin, userIdCheck, userEmailCheck } = require("./service/user_service");
-const { qnaWrite, qnaList } = require("./service/qna_service");
+const { qnaWrite, qnaList, qnaCount } = require("./service/qna_service");
 
-app.listen(80, () => {
-  console.log("http://localhos/:80 on");
+app.listen(8000, () => {
+  console.log("http://localhos/:8000 on");
 });
 
 app.use(cors());
@@ -38,6 +38,10 @@ app.post("/board", (req, res) => {
   console.log(req.body); // { idx: 0 }
   const idx = req.body.idx;
   qnaList(idx, req, res);
+});
+
+app.get("/board/setCount", (req, res) => {
+  qnaCount(req, res);
 });
 
 sequelize

@@ -1,3 +1,4 @@
+const e = require("express");
 const { QnA, User } = require("../model");
 
 // 문의사항 게시판에 글 데이터가 들어감
@@ -34,4 +35,11 @@ module.exports.qnaList = (idx, req, res) => {
     console.log(e);
     res.send(e);
   });
+};
+
+// 글 전체 목록 갯수를 가져옴
+module.exports.qnaCount = (req, res) => {
+  //QnA.count().then((e) => {
+  res.send(e);
+  // });
 };

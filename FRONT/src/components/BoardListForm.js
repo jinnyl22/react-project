@@ -10,18 +10,23 @@ const BoardListForm = () => {
   const [postUrl, setPostUrl] = useState("notice");
   const [page, setPage] = useState("0");
 
+  const dispatch = useDispatch();
   const location = useLocation();
+
   const BoardListForm = useSelector((state) => state.boardListForm.list);
   const NoticeListForm = useSelector((state) => state.noticeListForm.list);
+
   // console.log(BoardListForm.length);
-  const dispatch = useDispatch();
+
+  // 문의사항에서만 사용할 페이지 네이션을 주시할 state
+  const [boardPagenation, setBoardPagenation] = useState(0);
 
   // 페이지 네이션
   useEffect(() => {
     // qnaListFetch(0) 0일 때는 시퀄라이즈 offset이 0*10=0 맨 처음 등록한 글 부터 10개를 가져옴
     // 1이면 1*10=10 맨 처음 등록한 글 부터 10개를 제외하고 가져옴
-    dispatch(qnaListFetch(0));
-  }, []);
+    dispatch(qnaListFetch(boardPagenation));
+  }, [boardPagenation]);
 
   useEffect(() => {
     if (location.pathname) {
