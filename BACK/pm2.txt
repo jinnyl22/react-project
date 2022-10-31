@@ -1,6 +1,0 @@
-pm2 
-
-pm2 stop app.js // 서버 종료
-pm2 start app.js // 서버 키는것
-pm2 restart app.js // 서버 재 시작 (변경 사항 적용 시킬 때)
-pm2 log // 서버 상 모든 콘솔 다 로그로 확인
