@@ -1,3 +1,10 @@
+.b {
+  width: 1050px;
+  padding: 50px 0px 80px 0px;
+  margin: 0px auto;
+  display: flex;
+}
+
 .board {
   margin: 0px auto;
   display: flex;

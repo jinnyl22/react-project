@@ -1,5 +1,6 @@
 import React from "react";
 import { logo, searchimg, header_hand, header_body } from "../img";
+import { Link } from "react-router-dom";
 import "../css/header.css";
 const Header = () => {
   return (
@@ -12,18 +13,18 @@ const Header = () => {
             <div>관리자 페이지</div>
             {/* <Link to="/user/mypage">마이페이지</Link> */}
             <div className="top-bar"></div>
-            <div to="/user/join">회원가입</div>
+            <Link to="/user/join">회원가입</Link>
             <div className="top-bar"></div>
-            <div to="/user/login">로그인</div>
+            <Link to="/user/login">로그인</Link>
             <div className="top-bar"></div>
             <div className="cs">
-              <div to="/board">
+              <Link to="/notice">
                 고객센터
                 <span className="triangle"></span>
-              </div>
+              </Link>
               <div className="dropdown-list">
-                <div to="/notice">공지사항</div>
-                <div to="/board">문의사항</div>
+                <Link to="/notice">공지사항</Link>
+                <Link to="/qna">문의사항</Link>
               </div>
             </div>
           </div>

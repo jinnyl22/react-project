@@ -1,14 +1,14 @@
 import React from "react";
-import { BoardListForm } from "../components";
+import { AuthListForm } from "../components";
 
-const Board = () => {
+const Authority = () => {
   return (
     <div>
       <div style={{ width: "1050px", padding: "50px 0px 80px", margin: "0px auto", display: "flex" }}>
-        <BoardListForm />
+        <AuthListForm />
       </div>
     </div>
   );
 };
 
-export default Board;
+export default Authority;
