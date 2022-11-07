@@ -1,11 +1,12 @@
-import Authority from "./Auth/Authority";
+import Authority from "./Authority";
 import Main from "./Main";
 import Join from "./Join";
 import Login from "./Login";
 import Mypage from "./Mypage";
 import ShopAll from "./ShopAll";
-import Board from "./Board";
 import BoardWrite from "./BoardWrite";
 import QnaView from "./QnaView";
+import QnaWrite from "./QnaWrite";
+import QnA from "./QnA";
 
-export { Authority, Main, Join, Login, Mypage, ShopAll, Board, BoardWrite, QnaView };
+export { Authority, Main, Join, Login, Mypage, ShopAll, BoardWrite, QnaView, QnA, QnaWrite };

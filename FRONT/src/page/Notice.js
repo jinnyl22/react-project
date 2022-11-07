@@ -1,25 +1,13 @@
 import React from "react";
 import "../css/list_form.css";
 
-const BoardListForm = () => {
+const Notice = () => {
   return (
     <>
-      <div className="board">
-        <div className="side-box">
-          <div className="notice-box">
-            <div>
-              <span>공지사항</span>
-            </div>
-          </div>
-          <div className="board-box">
-            <div>
-              <span>문의사항</span>
-            </div>
-          </div>
-        </div>
+      <div className="b">
         <div className="board-container">
           <div className="board-top">
-            <h3></h3>
+            <h3>공지사항</h3>
             <span>배송, 상품, 기타</span>
           </div>
           <div className="write-btn">
@@ -50,4 +38,4 @@ const BoardListForm = () => {
   );
 };
 
-export default BoardListForm;
+export default Notice;

@@ -4,8 +4,8 @@ import AuthListForm from "./AuthListForm";
 import Pagination from "./Pagination";
 import Timer from "./Timer";
 import SlideTop from "./SlideTop";
-import BoardListForm from "./BoardListForm";
-import BoardViewForm from "./BoardViewForm";
+import BoardSide from "./BoardSide";
+
 import ProductList from "./ProductList";
 
-export { Header, Footer, Pagination, Timer, SlideTop, AuthListForm, BoardListForm, BoardViewForm, ProductList };
+export { Header, Footer, Pagination, Timer, SlideTop, AuthListForm, ProductList, BoardSide };
