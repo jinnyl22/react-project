@@ -19,14 +19,27 @@ const Qna = () => {
     nav("/qna/write");
   };
 
+  // 글 조회 페이지로 이동
+  const qnaViewHandler = (id) => {
+    nav("/qna/view/" + id);
+  };
+
   useEffect(() => {
     console.log("ddfgdfk");
     dispatch(ContentFn.GetContent(0, 10));
   }, []);
 
+  useEffect(() => {
+    console.log(content);
+  }, [content]);
+
   const deleteBtn = (index) => {
-    dispatch(ContentFn.DelContent(index));
+    dispatch(ContentFn.DelContent(index, 0, 10));
   };
+
+  useEffect(() => {
+    console.log("sdfs");
+  }, [content]);
 
   // 배열 안에 주시할 값을 넣어준다.
   // 값이 변하면 재렌더 해줌!
@@ -60,7 +73,13 @@ const Qna = () => {
             <tbody>
               {content.map((el, idx) => (
                 <>
-                  <tr className="board-tbody" key={idx}>
+                  <tr
+                    onClick={() => {
+                      qnaViewHandler(idx);
+                    }}
+                    className="board-tbody"
+                    key={idx}
+                  >
                     <td className="board-num">{idx + 1}</td>
                     <td className="board-title">{el.title}</td>
                     <td className="board-name">{el.user}</td>

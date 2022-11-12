@@ -36,6 +36,21 @@ app.post("/qna/write", (req, res) => {
   res.send(req.body);
 });
 
+app.post("/qna/edit", (req, res) => {
+  console.log(req.body);
+  const { title, text, id } = req.body;
+  Qna.update(
+    {
+      title,
+      text,
+    },
+    {
+      where: { id },
+    }
+  );
+  res.send();
+});
+
 // app.get("/qna", (req, res) => {
 //   // qna 테이블에 create 함수로 편하게 추가!
 //   Qna.create({ title: "테스트 타이틀", user: "테스트 유저", count: 0 });
@@ -57,6 +72,7 @@ app.post("/qna", async (req, res) => {
 app.post("/qna/delete", (req, res) => {
   const { num } = req.body;
   Qna.destroy({ where: { id: num } });
+  res.send();
 });
 
 app.listen(8000, () => {

@@ -9,7 +9,7 @@ module.exports = config = {
     database: "react-project",
     host: "127.0.0.1",
     dialect: "mysql",
-    timezone: "Asia/Seoul",
+    timezone: "+9:00",
     dialectOptions: {
       dataStrings: true,
       typeCast: true,

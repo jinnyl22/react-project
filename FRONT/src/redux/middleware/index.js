@@ -38,7 +38,7 @@ function CreateContent(title, text, user) {
 }
 
 // 글 삭제
-function DelContent(num) {
+function DelContent(num, index, count) {
   return async (dispatch, getState) => {
     await axios({
       method: "post",
@@ -47,7 +47,6 @@ function DelContent(num) {
         num,
       },
     });
-    const { index, count } = getState();
     const qnaList = await axios({
       method: "post",
       url: "http://localhost:8000/qna",
@@ -58,11 +57,24 @@ function DelContent(num) {
         count,
       },
     });
+
     dispatch({ type: "GETCONTENTLIST", payload: qnaList.data });
   };
 }
 
 // 글 수정
-function UpdateContent() {}
+function UpdateContent(title, text, id) {
+  return async (dispatch, getState) => {
+    await axios({
+      method: "post",
+      url: "http://localhost:8000/qna/edit",
+      data: {
+        title,
+        text,
+        id,
+      },
+    });
+  };
+}
 
 export const ContentFn = { GetContent, CreateContent, DelContent, UpdateContent };

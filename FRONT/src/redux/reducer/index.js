@@ -1,12 +1,12 @@
 const init = {
   content: [
-    {
-      num: 1,
-      title: "",
-      user: "",
-      createAt: new Date().getTime(),
-      count: 0,
-    },
+    // {
+    //   num: 1,
+    //   title: "",
+    //   user: "",
+    //   createAt: new Date().getTime(),
+    //   count: 0,
+    // },
   ],
   index: 0,
   count: 10,

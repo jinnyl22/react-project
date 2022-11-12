@@ -85,6 +85,12 @@
   cursor: pointer;
 }
 
+.listBtn button:nth-child(2) {
+  width: 80px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
 .board-d-content {
   width: 100%;
   height: 300px;
