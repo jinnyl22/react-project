@@ -71,6 +71,7 @@ const Qna = () => {
               </tr>
             </thead>
             <tbody>
+              {/* {content.slice(offset, offset + limit).map(({ id, title, body }) => */}
               {content.map((el, idx) => (
                 <>
                   <tr
